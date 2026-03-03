@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+from pathlib import Path
 matplotlib.use("Agg")
 
 
@@ -470,8 +471,14 @@ def run_calculations(df, style_rows_with_ERR):
     ax.set_title("Asset Allocation")
     ax.axis("equal")
     plt.tight_layout()
-    plt.savefig(r"C:/Users/ThinkPad/OneDrive/Pictures/Desktop/TOP/Observations/Title Pie chart.png", dpi=300, bbox_inches="tight")
 
+
+
+    BASE_DIR = Path(__file__).resolve().parent
+    OBS_PATH = BASE_DIR / "Observations"
+    OBS_PATH.mkdir(exist_ok=True)
+
+    plt.savefig(OBS_PATH / "Title Pie chart.png", dpi=300, bbox_inches="tight")
 
     # In[ ]:
 
