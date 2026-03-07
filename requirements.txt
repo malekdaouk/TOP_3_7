@@ -5,3 +5,5 @@ matplotlib
 python-pptx
 openpyxl
 Pillow
+requests
+python-dotenv
